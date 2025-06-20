@@ -41,12 +41,12 @@ python do_registration.py
 
 For each inferred habitat, CANVAS extracts a suite of biologically interpretable spatial features spanning six domains:
 
-- **Composition:** Cell-type abundance, immune–stromal partitioning
-- **Diversity:** Shannon index, Fisher alpha, richness, entropy
-- **Spatial metrics:** Ripley’s K/L/F functions, Clark–Evans index, kernel density
-- **Interaction:** Cell–cell proximity networks, motif embeddings, barrier scores
-- **Distance:** Intercellular distance matrices stratified by immune lineage
-- **Transition entropy:** Non-Euclidean metrics of spatial heterogeneity and boundary complexity
+- **Composition:** Relative abundance of components and immune–stromal partitioning
+- **Diversity:** Habitat heterogeneity quantified by Shannon index, Fisher alpha, richness, and entropy
+- **Spatial metrics:** Aggregation and dispersion captured via Ripley’s K/L/F functions, Clark–Evans index, and kernel density
+- **Interaction:** Frequency of spatial co-occurrence or avoidance based on proximity-defined networks
+- **Distance:** Minimum intra-habitat distances between key functional elements
+- **Transition entropy:** Non-Euclidean metrics reflecting internal heterogeneity and boundary complexity
 
 **Run:**
 
@@ -123,12 +123,13 @@ install.packages(c("survival", "glmnet", "randomForestSRC", "ggplot2", "vegan", 
 ```
 CANVAS/
 ├── demo_data/ # Example data including input image and spatial feature matrices
-│ ├── H&E_image.tif # Raw H&E histology image
+│ ├── H&E_image/ # Raw H&E histology image
 │ ├── Image_habitat_prediction.csv # Predicted habitat labels for each image patch
 │ └── Spatial_feature_matrix.csv # Spatial feature matrix for each sample
 │
 ├── habitat_prediction/ # Module 1: Habitat prediction from H&E using vision models
-│ └── habitat_prediction.py # Performs CN-to-habitat inference via foundation model
+│ ├── habitat_prediction.py # Performs CN-to-habitat inference via foundation model
+│ └── co-registration.py # Optional: CODEX and histology cell-cell alignment
 │
 ├── spatial_feature/ # Module 2: Spatial feature extraction
 │ └── spatial_feature_extra.R # Calculates composition, diversity, interaction, and more
@@ -142,18 +143,6 @@ CANVAS/
 │
 ├── README.md # This file
 ```
----
-
-### 🧪 Usage Example
-
-```bash
-python do_CANVAS.py        # habitat prediction
-Rscript do_feature_generation.R   # spatial feature extraction
-Rscript do_feature_modeling.R     # prognostic model training
-python do_AI_agent.py      # spatial feature interpretation
-```
-
----
 
 ### 📄 Citation
 
