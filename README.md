@@ -1,7 +1,7 @@
 # CANVAS
 <table>
 <tr>
-<td width="80%">
+<td width="50%">
 
 ### A cross-modality AI framework for ecological habitat reconstruction from histopathology
 
