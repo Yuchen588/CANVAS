@@ -12,7 +12,7 @@ By learning to transfer CODEX-defined cellular neighborhoods (CNs) onto native h
 Spanning single-cell resolution to population-scale clinical inference, CANVAS builds a functional bridge between spatial biology and precision oncology, enabling interpretable and translatable spatial biomarker discovery.
 
 </td>
-<td width="40%" align="center">
+<td width="100%" align="center">
 
 <img src="https://github.com/Yuchen588/CANVAS/blob/main/CANVAS_image.png?raw=true" width="280">
 
