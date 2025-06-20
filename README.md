@@ -166,5 +166,5 @@ Project maintained by the Department of Radiation Oncology, Stanford University.
 ### 🧠 Acknowledgements
 
 We thank the developers of CODEX, Seurat, PyTorch, and foundational libraries.\
-This work was supported by NIH, NSF, and institutional funds from Stanford Radiology.
+This work was supported by NIH, NSF, and institutional funds from Stanford University.
 
