@@ -17,14 +17,6 @@
 </tr>
 </table>
 
-### A cross-modality AI framework for ecological habitat reconstruction from histopathology
-
-**CANVAS** (Cellular Architecture and Neighborhood-informed Virtual AI-driven Spatial-reconstruction) is a biologically grounded, cross-modality AI framework that integrates high-dimensional spatial proteomics with routine histopathology to reconstruct, quantify, and model tumor ecological habitats directly from H&E-stained tissue sections.
-
-By learning to transfer CODEX-defined cellular neighborhoods (CNs) onto native histology, CANVAS enables accurate and scalable inference of spatial habitats across whole-slide images. This cross-modality alignment is powered by vision–language foundation modeling, refined through AI-agent–guided biological interpretation, and optimized via efficient spatial feature selection and machine learning–based prognostic modeling.
-
-Spanning single-cell resolution to population-scale clinical inference, CANVAS builds a functional bridge between spatial biology and precision oncology, enabling interpretable and translatable spatial biomarker discovery.
-
 ### 🔧 Key Modules
 
 #### (1) CN-to-habitat prediction via a vision–language foundation model
