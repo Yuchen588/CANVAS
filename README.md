@@ -1,17 +1,22 @@
 # CANVAS
-Cellular Architecture and Neighborhood-informed Virtual AI-driven Spatial-reconstruction
+[![R >4.0](https://img.shields.io/badge/R-%3E%3D4.0-brightgreen)](https://www.r-project.org/) ![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6809147.svg) ![jupyter](https://img.shields.io/badge/Jupyter--notebook-EV_SpaTalk--tutorial-yellow?logo=jupyter) ![DOI](https://img.shields.io/badge/DOI-10.1038%2Fs41467--022--32111--8-yellowgreen)
+
+### Cellular Architecture and Neighborhood-informed Virtual AI-driven Spatial-reconstruction
+
 CANVAS is a biologically grounded, cross-modality AI framework that integrates high-dimensional spatial proteomics with routine histopathology to reconstruct, quantify, and model tumor ecological habitats directly from H&E-stained tissue sections. By learning to transfer CODEX-defined cellular neighborhoods (CNs) onto native histology, CANVAS enables accurate and scalable inference of spatial habitats across whole-slide images. This cross-modality alignment is powered by vision–language foundation modeling, refined through AI-agent–guided biological interpretation, and optimized via efficient spatial feature selection and machine learning–based prognostic modeling. Spanning single-cell resolution to population-scale clinical inference, CANVAS builds a functional bridge between spatial biology and precision oncology, enabling interpretable and translatable spatial biomarker discovery.
 ________________________________________
-Key Modules
-(1) CN-to-habitat prediction via a vision–language foundation model
+## Key Modules
+# (1) CN-to-habitat prediction via a vision–language foundation model
+`
 CANVAS employs a foundation model trained on paired CODEX–H&E whole-slide data to infer CN-defined ecological habitats directly from unannotated histology. This module integrates:
-•	Visual context derived from high-resolution H&E morphology, capturing both cellular composition and tissue architecture
-•	(Optional) Language-driven semantic priors, conceptually designed to encode CN-specific cell-type composition, functional states, and immunologic roles. Although not used in the current implementation, this component is modular and supports prompt-based alignment for future extensions
-•	Contrastive supervision between CODEX-defined CNs and histology-inferred habitats to enforce spatial and biological correspondence
+>	Visual context derived from high-resolution H&E morphology, capturing both cellular composition and tissue architecture
+>	(Optional) Language-driven semantic priors, conceptually designed to encode CN-specific cell-type composition, functional states, and immunologic roles. Although not used in the current implementation, this component is modular and supports prompt-based alignment for future extensions
+>	Contrastive supervision between CODEX-defined CNs and histology-inferred habitats to enforce spatial and biological correspondence
+`
 Run: do_CANVAS.py
 Output: Patch-level probability maps of predicted habitat classes across entire whole-slide H&E images, enabling virtual spatial annotation with cellular-scale resolution
 ________________________________________
-(2) Habitat-level spatial feature generation
+# (2) Habitat-level spatial feature generation
 For each inferred habitat, CANVAS extracts a suite of biologically interpretable spatial features spanning six core domains:
 •	Composition: Cell-type abundance and immune–stromal partitioning
 •	Diversity: Shannon index, Fisher alpha, richness, and entropy-based metrics
