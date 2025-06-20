@@ -77,9 +77,9 @@ Rscript do_feature_modeling.R
 
 CANVAS incorporates an AI-agent module to enhance interpretability by linking spatial features to their cellular and topological origins. Specifically, the agent:
 
-- Maps high-level features (e.g., STE, Ripley’s K) to cellular composition and topology
-- Highlights immune–stromal segregation, fibrotic barriers, and lymphoid clustering
-- Prioritizes spatial configurations associated with immune exclusion and therapy resistance
+- Links predictive features (e.g., STE, Ripley’s K, proximity scores) to underlying habitat composition and topological structure
+- Identifies spatial arrangements such as immune–stromal segregation, fibrotic barriers, and lymphoid clustering that contribute to ecological fitness or exclusion
+- Prioritizes habitat-level patterns associated with immunosuppressive niches, TLS formation, and therapy resistance
 
 **Run:**
 
