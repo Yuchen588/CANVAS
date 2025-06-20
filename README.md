@@ -1,8 +1,8 @@
 # CANVAS
 
-<div style="display: flex; align-items: center; gap: 30px;">
+<div style="display: flex; align-items: flex-start; gap: 30px;">
 
-<div style="flex: 1;">
+<div style="flex: 1; min-width: 300px;">
 
 ### A cross-modality AI framework for ecological habitat reconstruction from histopathology
 
@@ -14,7 +14,7 @@ Spanning single-cell resolution to population-scale clinical inference, CANVAS b
 
 </div>
 
-<div style="flex: 0 0 280px;">
+<div style="flex: 0 0 300px;">
   <img src="https://github.com/Yuchen588/CANVAS/blob/main/CANVAS_image.png?raw=true" width="100%">
 </div>
 
