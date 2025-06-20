@@ -26,6 +26,7 @@ CANVAS employs a foundation model trained on paired CODEX–H&E whole-slide data
 - Visual context derived from high-resolution H&E morphology
 - *(Optional)* Language-driven semantic priors encoding CN-specific composition, functions, and immune roles *(modular but not used in current version)*
 - Contrastive supervision across CODEX–histology habitat pairs to ensure spatial and biological correspondence
+- Cross-modality co-registration at single-cell resolution to anchor CODEX-defined cellular neighborhoods within histologic context
 
 **Run:**
 
