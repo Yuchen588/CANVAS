@@ -1,6 +1,6 @@
 # CANVAS
 
-
+<img src="https://github.com/Yuchen588/CANVAS/blob/main/CANVAS_image.png?raw=true" width="800">
 
 ### A cross-modality AI framework for ecological habitat reconstruction from histopathology
 
