@@ -1,8 +1,8 @@
 # CANVAS
 
-<div style="display: flex; align-items: flex-start; gap: 30px;">
-
-<div style="flex: 1; min-width: 300px;">
+<table>
+<tr>
+<td width="30%" valign="top">
 
 ### A cross-modality AI framework for ecological habitat reconstruction from histopathology
 
@@ -12,13 +12,14 @@ By learning to transfer CODEX-defined cellular neighborhoods (CNs) onto native h
 
 Spanning single-cell resolution to population-scale clinical inference, CANVAS builds a functional bridge between spatial biology and precision oncology, enabling interpretable and translatable spatial biomarker discovery.
 
-</div>
+</td>
+<td width="30%" align="center" valign="middle">
 
-<div style="flex: 0 0 300px;">
-  <img src="https://github.com/Yuchen588/CANVAS/blob/main/CANVAS_image.png?raw=true" width="100%">
-</div>
+<img src="https://github.com/Yuchen588/CANVAS/blob/main/CANVAS_image.png?raw=true" style="max-width:280px; height:auto;">
 
-</div>
+</td>
+</tr>
+</table>
 
 ### A cross-modality AI framework for ecological habitat reconstruction from histopathology
 
