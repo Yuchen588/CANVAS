@@ -131,18 +131,15 @@ CANVAS/
 ├── spatial_feature/ # Module 2: Spatial feature extraction
 │ └── spatial_feature_extra.R # Calculates composition, diversity, interaction, and more
 │
-├── feature_select/ # Module 3: Feature selection pipeline
-│ └── feature_select_model.R # Bootstrap LASSO and RandomForestSRC for stable feature ranking
-│
-├── prog_model/ # Module 4: Prognostic modeling
+├── modeling/ # Module 3: Feature selection and prognostic modeling
+│ ├── feature_select_model.R # Bootstrap LASSO and RandomForestSRC for stable feature ranking
 │ └── prog_model.R # Cox regression and multivariate modeling for risk prediction
 │
-├── AI_Agent/ # Module 5: AI-agent for biological interpretation
+├── AI_Agent/ # Module 4: AI-agent for biological interpretation
 │ └── AI_agent.py # Traces key features back to underlying spatial architecture
 │
 ├── README.md # This file
 ```
-
 ---
 
 ### 🧪 Usage Example
