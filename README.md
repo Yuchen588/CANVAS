@@ -1,6 +1,5 @@
 # CANVAS
 
-<table>
 <tr>
 <td width="60%">
 
@@ -19,7 +18,6 @@ Spanning single-cell resolution to population-scale clinical inference, CANVAS b
 
 </td>
 </tr>
-</table>
 
 ---
 
