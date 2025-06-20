@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-<td width="30%" valign="top">
+<td width="60%" valign="top">
 
 ### A cross-modality AI framework for ecological habitat reconstruction from histopathology
 
@@ -13,7 +13,7 @@ By learning to transfer CODEX-defined cellular neighborhoods (CNs) onto native h
 Spanning single-cell resolution to population-scale clinical inference, CANVAS builds a functional bridge between spatial biology and precision oncology, enabling interpretable and translatable spatial biomarker discovery.
 
 </td>
-<td width="30%" align="center" valign="middle">
+<td width="60%" align="center" valign="middle">
 
 <img src="https://github.com/Yuchen588/CANVAS/blob/main/CANVAS_image.png?raw=true" style="max-width:280px; height:auto;">
 
