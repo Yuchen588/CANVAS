@@ -120,13 +120,27 @@ install.packages(c("survival", "glmnet", "randomForestSRC", "ggplot2", "vegan", 
 
 ```
 CANVAS/
-├── figures/                 # Schematic and output images
-├── demo_data/              # Sample inputs (H&E image, CN maps)
-├── model/                  # Pretrained models (vision foundation models)
-├── scripts/                # Python and R scripts
-├── outputs/                # Example outputs: maps, features, models
-├── requirements.txt        # Python dependencies
-├── README.md               # This file
+├── demo_data/ # Example data including input image and spatial feature matrices
+│ ├── H&E_image.tif # Raw H&E histology image
+│ ├── Image_habitat_prediction.csv # Predicted habitat labels for each image patch
+│ └── Spatial_feature_matrix.csv # Spatial feature matrix for each sample
+│
+├── habitat_prediction/ # Module 1: Habitat prediction from H&E using vision models
+│ └── habitat_prediction.py # Performs CN-to-habitat inference via foundation model
+│
+├── spatial_feature/ # Module 2: Spatial feature extraction
+│ └── spatial_feature_extra.R # Calculates composition, diversity, interaction, and more
+│
+├── feature_select/ # Module 3: Feature selection pipeline
+│ └── feature_select_model.R # Bootstrap LASSO and RandomForestSRC for stable feature ranking
+│
+├── prog_model/ # Module 4: Prognostic modeling
+│ └── prog_model.R # Cox regression and multivariate modeling for risk prediction
+│
+├── AI_Agent/ # Module 5: AI-agent for biological interpretation
+│ └── AI_agent.py # Traces key features back to underlying spatial architecture
+│
+├── README.md # This file
 ```
 
 ---
