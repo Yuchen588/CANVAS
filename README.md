@@ -32,6 +32,7 @@ CANVAS employs a foundation model trained on paired CODEX–H&E whole-slide data
 
 ```bash
 python do_CANVAS.py
+python do_registration.py
 ```
 
 **Output:** Patch-level probability maps of predicted habitat classes across whole-slide H&E images.
