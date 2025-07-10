@@ -77,13 +77,14 @@ Rscript do_feature_modeling.R
 #### (4) AI-Agent module for spatial feature interpretation
 
 CANVAS integrates a large language model (LLM)–powered AI agent to enhance interpretability by mapping high-dimensional spatial features to their underlying cellular architecture and topological context. 
+
 The agent provides structured explanations across five biological dimensions:
 
-(i) feature category,
-(ii) associated habitat cellular composition,
-(iii) spatial property description,
-(iv) topological coupling tendency,
-(v) biological and clinical implications.
+- (i) feature category,
+- (ii) associated habitat cellular composition,
+- (iii) spatial property description,
+- (iv) topological coupling tendency,
+- (v) biological and clinical implications.
 
 **Run:**
 
