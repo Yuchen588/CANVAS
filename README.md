@@ -151,7 +151,7 @@ CANVAS/
 
 ### 📄 Citation
 
-Li Y. et al. *Interpretable AI reconstructs histologic spatial ecosystems to advance precision oncology in lung cancer* (2025)
+Li Y. et al. *Cellular Architecture and Neighborhood-informed Virtual Spatial Tumor Profiling from Histopathology* (2025)
 
 ---
 
