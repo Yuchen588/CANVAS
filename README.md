@@ -21,18 +21,18 @@
 
 #### (1) CN-to-habitat prediction via a vision–language foundation model
 
-CANVAS employs a foundation model trained on paired CODEX–H&E whole-slide data to infer CN-defined ecological habitats directly from unannotated histology. This module integrates:
+CANVAS leverages a vision–language foundation model trained on paired CODEX and H&E whole-slide images to infer CN-defined ecological habitats directly from unannotated histology. This module integrates:
 
-- Visual context derived from high-resolution H&E morphology
-- *(Optional)* Language-driven semantic priors encoding CN-specific composition, functions, and immune roles *(modular but not used in current version)*
+- Visual context extracted from high-resolution H&E morphology
+- *(Optional)* Language-driven semantic priors encoding CN-specific composition, functions, and immune roles *(modular, not enabled in the current version)*
 - Contrastive supervision across CODEX–histology habitat pairs to ensure spatial and biological correspondence
 - Cross-modality co-registration at single-cell resolution to anchor CODEX-defined cellular neighborhoods within histologic context
 
 **Run:**
 
 ```bash
-python do_CANVAS.py
 python do_registration.py
+python train_CANVAS.py
 ```
 
 **Output:** Patch-level probability maps of predicted habitat classes across whole-slide H&E images.
