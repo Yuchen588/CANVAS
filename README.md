@@ -143,7 +143,7 @@ CANVAS/
 │ ├── feature_select_model.R # Bootstrap LASSO and RandomForestSRC for stable feature ranking
 │ └── prog_model.R # Cox regression and multivariate modeling for risk prediction
 │
-├── AI_Agent/ # Module 4: AI-agent for biological interpretation
+├── AI_agent/ # Module 4: AI-agent for biological interpretation
 │ └── AI_agent.py # Traces key features back to underlying spatial architecture
 │
 ├── README.md # This file
