@@ -68,18 +68,22 @@ To identify clinically meaningful spatial biomarkers, CANVAS performs:
 **Run:**
 
 ```bash
+Rscript do_feature_selection.R
 Rscript do_feature_modeling.R
 ```
 
 **Output:** Refined biomarker panels and risk prediction models for immunotherapy outcomes.
 
-#### (4) AI-agent guidance and spatial explainability
+#### (4) AI-Agent module for spatial feature interpretation
 
-CANVAS incorporates an AI-agent module to enhance interpretability by linking spatial features to their cellular and topological origins. Specifically, the agent:
+CANVAS integrates a large language model (LLM)–powered AI agent to enhance interpretability by mapping high-dimensional spatial features to their underlying cellular architecture and topological context. 
+The agent provides structured explanations across five biological dimensions:
 
-- Links predictive features (e.g., STE, Ripley’s K, proximity scores) to underlying habitat composition and topological structure
-- Identifies spatial arrangements such as immune–stromal segregation, fibrotic barriers, and lymphoid clustering that contribute to ecological fitness or exclusion
-- Prioritizes habitat-level patterns associated with immunosuppressive niches, TLS formation, and therapy resistance
+(i) feature category,
+(ii) associated habitat cellular composition,
+(iii) spatial property description,
+(iv) topological coupling tendency,
+(v) biological and clinical implications.
 
 **Run:**
 
