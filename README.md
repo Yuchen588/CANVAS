@@ -31,8 +31,8 @@ CANVAS leverages a vision–language foundation model trained on paired CODEX an
 **Run:**
 
 ```bash
-python do_registration.py
-python train_CANVAS.py
+python co-registration.py
+python habitat_prediction.py
 ```
 
 **Output:** Patch-level maps of predicted habitat classes across whole-slide H&E images.
