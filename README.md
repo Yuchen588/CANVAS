@@ -24,7 +24,7 @@
 CANVAS leverages a vision–language foundation model trained on paired CODEX and H&E whole-slide images to infer CN-defined ecological habitats directly from unannotated histology. This module integrates:
 
 - Visual context extracted from high-resolution H&E morphology
-- *(Optional)* Language-driven semantic priors encoding CN-specific composition, cell phenotyes, and functional roles *(modular, not enabled in the current version)*
+- *(Optional)* Language-guided semantic priors from the vision–language foundation model, encoding CN-specific composition, phenotypes, and biological roles (currently disabled)
 - Contrastive supervision across CODEX–histology habitat pairs to ensure spatial and biological correspondence
 - Cross-modality co-registration at single-cell resolution to anchor CODEX-defined CNs within histologic context
 
