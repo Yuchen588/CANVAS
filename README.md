@@ -24,9 +24,9 @@
 CANVAS leverages a vision–language foundation model trained on paired CODEX and H&E whole-slide images to infer CN-defined ecological habitats directly from unannotated histology. This module integrates:
 
 - Visual context extracted from high-resolution H&E morphology
-- *(Optional)* Language-driven semantic priors encoding CN-specific composition, functions, and immune roles *(modular, not enabled in the current version)*
+- *(Optional)* Language-driven semantic priors encoding CN-specific composition, cell phenotyes, and functional roles *(modular, not enabled in the current version)*
 - Contrastive supervision across CODEX–histology habitat pairs to ensure spatial and biological correspondence
-- Cross-modality co-registration at single-cell resolution to anchor CODEX-defined cellular neighborhoods within histologic context
+- Cross-modality co-registration at single-cell resolution to anchor CODEX-defined CNs within histologic context
 
 **Run:**
 
@@ -35,23 +35,23 @@ python do_registration.py
 python train_CANVAS.py
 ```
 
-**Output:** Patch-level probability maps of predicted habitat classes across whole-slide H&E images.
+**Output:** Patch-level maps of predicted habitat classes across whole-slide H&E images.
 
 #### (2) Habitat-level spatial feature generation
 
-For each inferred habitat, CANVAS extracts a suite of biologically interpretable spatial features spanning six domains:
+For each inferred habitat, CANVAS extracts a suite of biologically interpretable spatial features spanning six categories:
 
-- **Composition:** Relative abundance of components and immune–stromal partitioning
-- **Diversity:** Habitat heterogeneity quantified by Shannon index, Fisher alpha, richness, and entropy
-- **Spatial metrics:** Aggregation and dispersion captured via Ripley’s K/L/F functions, Clark–Evans index, and kernel density
-- **Interaction:** Frequency of spatial co-occurrence or avoidance based on proximity-defined networks
-- **Distance:** Minimum intra-habitat distances between key functional elements
-- **Transition entropy:** Non-Euclidean metrics reflecting internal heterogeneity and boundary complexity
+- **Composition:** Quantifies the relative abundance of each spatial habitat within the tissue section
+- **Diversity:** Measures habitat heterogeneity using metrics such as Shannon index, Fisher’s alpha, and richness
+- **Spatial dispersion:** Captures habitat-level spatial organization using Ripley’s K, L, and F functions, Clark–Evans index, and kernel density
+- **Interaction:** Quantifies pairwise spatial relationships between habitats using permutation-based analysis
+- **Distance:** Computes directional Euclidean distances between habitat pairs
+- **Transition entropy:** Non-Euclidean metrics reflecting the internal complexity and interfacial dynamics of the spatial architecture
 
 **Run:**
 
 ```bash
-Rscript do_feature_generation.R
+Rscript Feature_generation/Spatial_metrics.R
 ```
 
 **Output:** Multiscale spatial feature matrices per sample.
@@ -62,29 +62,27 @@ To identify clinically meaningful spatial biomarkers, CANVAS performs:
 
 - Bootstrap LASSO and RandomForestSRC for feature stability and importance
 - Univariate Cox regression for interpretable survival association
-- Multivariate modeling across cohorts for outcome prediction
-- Subtype stratification across histologic and mutational subclasses (e.g., LUAD vs LUSC, EGFR/KRAS)
+- Multivariate modeling across cohorts for immunotherapy outcome prediction
 
 **Run:**
 
 ```bash
-Rscript do_feature_selection.R
-Rscript do_feature_modeling.R
+Rscript Feature_selection_modeling/feature_selection_modeling.R
 ```
 
 **Output:** Refined biomarker panels and risk prediction models for immunotherapy outcomes.
 
 #### (4) AI-Agent module for spatial feature interpretation
 
-CANVAS integrates a large language model (LLM)–powered AI agent to enhance interpretability by mapping high-dimensional spatial features to their underlying cellular architecture and topological context. 
+CANVAS incorporates a large language model (LLM)-driven AI agent to facilitate the systematic interpretation of high-dimensional spatial features by linking them to underlying spatial biology and relevant clinical priors.
 
-The agent provides structured explanations across five biological dimensions:
+The agent generates structured, human-interpretable outputs across five key biological dimensions:
 
-- (i) feature category,
-- (ii) associated habitat cellular composition,
-- (iii) spatial property description,
-- (iv) topological coupling tendency,
-- (v) biological and clinical implications.
+- (i) Feature category
+- (ii) Characteristic cellular composition of the associated habitat
+- (iii) Description of the encoded spatial property
+- (iv) Tendency for topological coupling with other habitats
+- (v) Potential biological and clinical relevance
 
 **Run:**
 
@@ -92,16 +90,16 @@ The agent provides structured explanations across five biological dimensions:
 python do_AI_agent.py
 ```
 
-**Output:** A biologically coherent explanation layer linking model-derived features to spatial architecture.
+**Output:** An interpretable annotation layer that contextualizes model-derived spatial features within tissue architecture, ecological topology, and clinical significance.
 
 ---
 
-### 🚀 Applications
+### 🔬 Applications
 
-- Immunotherapy response stratification in NSCLC and other solid tumors
-- Habitat-informed prognosis modeling across TCGA, PLCO, and NLST
-- Molecular subtyping independent of PD-L1 status or canonical mutations
-- Virtual spatial proteomic annotation inferred from routine histology
+- Immunotherapy response stratification in NSCLC and other solid tumors using spatially resolved habitat features
+- Habitat-informed prognostic modeling across large-scale cohorts including TCGA, PLCO, and NLST
+- Molecular subtyping independent of PD-L1 expression levels or canonical oncogenic mutations (e.g., EGFR, KRAS)
+- Virtual spatial proteomic annotation directly inferred from standard H&E histology, enabling scalable tissue profiling without multiplex staining
 
 ---
 
@@ -164,6 +162,6 @@ Project maintained by the Department of Radiation Oncology, Stanford University.
 
 ### 🧠 Acknowledgements
 
-We thank the developers of CODEX, Seurat, PyTorch, and foundational libraries.\
-This work was supported by NIH, NSF, and institutional funds from Stanford University.
+We thank the developers of core tools and libraries including CODEX, Seurat, and PyTorch.\
+This work was supported by the NIH, NSF, and institutional funding from Stanford University.
 
