@@ -127,26 +127,26 @@ install.packages(c("survival", "glmnet", "randomForestSRC", "ggplot2", "vegan", 
 
 ```
 CANVAS/
-├── demo_data/ # Example data including input image and spatial feature matrices
-│ ├── H&E_image/ # Raw H&E histology image
-│ ├── Image_habitat_prediction.csv # Predicted habitat labels for each image patch
-│ └── Spatial_feature_matrix.csv # Spatial feature matrix for each sample
-│
-├── habitat_prediction/ # Module 1: Habitat prediction from H&E using vision models
-│ ├── habitat_prediction.py # Performs CN-to-habitat inference via foundation model
-│ └── co-registration.py # Optional: CODEX and histology cell-cell alignment
-│
-├── spatial_feature/ # Module 2: Spatial feature extraction
-│ └── spatial_feature_extra.R # Calculates composition, diversity, interaction, and more
-│
-├── modeling/ # Module 3: Feature selection and prognostic modeling
-│ ├── feature_select_model.R # Bootstrap LASSO and RandomForestSRC for stable feature ranking
-│ └── prog_model.R # Cox regression and multivariate modeling for risk prediction
-│
-├── AI_agent/ # Module 4: AI-agent for biological interpretation
-│ └── AI_agent.py # Traces key features back to underlying spatial architecture
-│
-├── README.md # This file
+├── README.md                          # Project documentation
+
+├── Demo_data/                         # Example data folder
+│   └── Spatial_feature_matrix.csv     # CANVAS-derived spatial feature matrix for each sample
+
+├── Habitat_prediction/                # Module 1: CN-to-habitat inference via foundation model
+│   ├── habitat_prediction.py          # Predicts ecological habitats from cellular neighborhoods
+│   └── co-registration.py             # Co-registers CODEX and histology at single-cell resolution
+
+├── Feature_generation/                # Module 2: Spatial feature generation
+│   └── Spatial_metrics.R              # Calculates composition, diversity, interaction, and spatial metrics
+
+├── Feature_selection_modeling/       # Module 3: Feature selection and prognostic modeling
+│   └── feature_selection_modeling.R   # Performs Bootstrap LASSO, random forest, and Cox modeling
+
+├── AI_agent/                          # Module 4: AI agent for biological interpretation
+│   └── AI_agent.py                    # Interactive agent for habitat-level biological analysis
+
+├── Abstruct_figure/                   # Folder for figures
+
 ```
 
 ### 📄 Citation
