@@ -140,8 +140,8 @@ CANVAS/
 ├── Feature_generation/                # Module 2: Habitat-level spatial feature generation
 │   └── Spatial_metrics.R              # Calculates composition, diversity, interaction, and other spatial metrics
 
-├── Feature_selection_modeling/       # Module 3: Feature selection and prognostic modeling
-│   └── feature_selection_modeling.R  # Performs Bootstrap LASSO, random forest, and Cox regression modeling
+├── Feature_selection_modeling/        # Module 3: Feature selection and prognostic modeling
+│   └── feature_selection_modeling.R   # Performs Bootstrap LASSO, random forest, and Cox regression modeling
 
 ├── AI_agent/                          # Module 4: AI-Agent module for spatial feature interpretation
 │   └── AI_agent.py                    # Interactive agent for habitat-level biological and clinical annotation
