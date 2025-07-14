@@ -23,15 +23,16 @@
 
 CANVAS leverages a vision–language foundation model trained on paired CODEX and H&E whole-slide images to infer CN-defined ecological habitats directly from unannotated histology. This module integrates:
 
-- Visual context extracted from high-resolution H&E morphology
-- *(Optional)* Language-guided semantic priors from the vision–language foundation model, encoding CN-specific composition, phenotypes, and biological roles (currently disabled)
-- Contrastive supervision across CODEX–histology habitat pairs to ensure spatial and biological correspondence
-- Cross-modality co-registration at single-cell resolution to anchor CODEX-defined CNs within histologic context
+- Use the palom package to co-register CODEX and H&E images, and to map CODEX-defined cellular neighborhoods onto histology
+- Use cn_assignment to generate habitat labels for training and validation
+- Train a vision–language model to predict habitat classes from H&E images based on the co-registered CNs
+- Predict habitat classes on H&E images using the trained model
 
 **Run:**
 
 ```bash
-python co-registration.py
+python cn_assignment.py
+python habitat_training.py
 python habitat_prediction.py
 ```
 
@@ -52,6 +53,7 @@ For each inferred habitat, CANVAS extracts a suite of biologically interpretable
 
 ```bash
 Rscript Feature_generation/Spatial_metrics.R
+Python Feature_generation/Distance_calculation.py
 ```
 
 **Output:** Multiscale spatial feature matrices per sample.
@@ -87,9 +89,9 @@ The agent generates structured, human-interpretable outputs across five key biol
 **Run:**
 
 ```bash
-python do_AI_agent.py
+python AI_Agent/run.py
 ```
-
+**Note:** Replace the default API key with your own in spatial_agent.py.
 **Output:** An interpretable annotation layer that contextualizes model-derived spatial features within tissue architecture, ecological topology, and clinical significance.
 
 ---
@@ -98,7 +100,7 @@ python do_AI_agent.py
 
 - Immunotherapy response stratification in NSCLC and other solid tumors using spatially resolved habitat features
 - Habitat-informed prognostic modeling across large-scale cohorts including TCGA, PLCO, and NLST
-- Molecular subtyping independent of PD-L1 expression levels or canonical oncogenic mutations (e.g., EGFR, KRAS)
+- Patient subtyping independent of PD-L1 expression levels or canonical oncogenic mutations (e.g., EGFR, KRAS)
 - Virtual spatial proteomic annotation directly inferred from standard H&E histology, enabling scalable tissue profiling without multiplex staining
 
 ---
@@ -125,25 +127,27 @@ install.packages(c("survival", "glmnet", "randomForestSRC", "ggplot2", "vegan", 
 
 ```
 CANVAS/
-├── README.md                          # Project documentation
+├── README.md                          # Project documentation and usage instructions
 
-├── Demo_data/                         # Example data folder
+├── Demo_data/                         # Example dataset
 │   └── Spatial_feature_matrix.csv     # CANVAS-derived spatial feature matrix for each sample
 
-├── Habitat_prediction/                # Module 1: CN-to-habitat inference via foundation model
-│   ├── habitat_prediction.py          # Predicts ecological habitats from cellular neighborhoods
-│   └── co-registration.py             # Co-registers CODEX and histology at single-cell resolution
+├── Habitat_prediction/                # Module 1: CN-to-habitat prediction via a vision–language foundation model
+│   ├── cn_assignment.py               # Co-registration of CODEX and H&E images at single-cell resolution
+│   ├── habitat_prediction.py          # Predicts ecological habitats from CN annotations
+│   └── habitat_training.py            # Trains vision–language model for habitat prediction
 
-├── Feature_generation/                # Module 2: Spatial feature generation
-│   └── Spatial_metrics.R              # Calculates composition, diversity, interaction, and spatial metrics
+├── Feature_generation/                # Module 2: Habitat-level spatial feature generation
+│   └── Spatial_metrics.R              # Calculates composition, diversity, interaction, and other spatial metrics
 
 ├── Feature_selection_modeling/       # Module 3: Feature selection and prognostic modeling
-│   └── feature_selection_modeling.R   # Performs Bootstrap LASSO, random forest, and Cox modeling
+│   └── feature_selection_modeling.R  # Performs Bootstrap LASSO, random forest, and Cox regression modeling
 
-├── AI_agent/                          # Module 4: AI agent for biological interpretation
-│   └── AI_agent.py                    # Interactive agent for habitat-level biological analysis
+├── AI_agent/                          # Module 4: AI-Agent module for spatial feature interpretation
+│   └── AI_agent.py                    # Interactive agent for habitat-level biological and clinical annotation
 
-├── Abstruct_figure/                   # Folder for figures
+├── Abstruct_figure/                   # Folder for figures used in the abstract or main text
+
 
 ```
 
@@ -163,5 +167,4 @@ Project maintained by the Department of Radiation Oncology, Stanford University.
 ### 🧠 Acknowledgements
 
 We thank the developers of core tools and libraries including CODEX, Seurat, and PyTorch.\
-This work was supported by the NIH, NSF, and institutional funding from Stanford University.
-
+This work was supported by funding from the National Institutes of Health (NIH).
